@@ -35,7 +35,7 @@ export default function NewspaperNavbar() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-default-500 hover:bg-default-100 hover:text-default-700 focus:outline-none lg:hidden"
+              className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-default-100 focus:outline-none lg:hidden"
               aria-controls="mobile-menu"
               aria-expanded={isMenuOpen}
             >
@@ -46,7 +46,7 @@ export default function NewspaperNavbar() {
                   className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth="1.5"
+                  strokeWidth="2"
                   stroke="currentColor"
                 >
                   <path
@@ -61,7 +61,7 @@ export default function NewspaperNavbar() {
                   className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth="1.5"
+                  strokeWidth="2"
                   stroke="currentColor"
                 >
                   <path
@@ -77,11 +77,11 @@ export default function NewspaperNavbar() {
             <div className="flex items-center gap-3">
               <Link
                 href="/"
-                className="text-2xl tracking-tighter text-foreground hover:opacity-90 uppercase font-masthead"
+                className="text-2xl font-extrabold tracking-tighter text-foreground hover:opacity-90 uppercase font-masthead"
               >
                 THE Briefing
               </Link>
-              <span className="hidden lg:inline text-xs text-default-400 border-l pl-3 border-default-200 mt-1">
+              <span className="hidden lg:inline text-xs text-default-400 border-l pl-3 border-default-200 mt-1 text-foreground">
                 {formattedDate}
               </span>
             </div>
@@ -105,10 +105,10 @@ export default function NewspaperNavbar() {
           <div className="flex items-center gap-2">
             <Button
               as={Link}
-              href="/login"
+              href="/signin"
               variant="tertiary" // HeroUI v3 light alternative
               size="sm"
-              className="hidden sm:inline-flex text-xs font-semibold"
+              className="hidden sm:inline-flex text-xs font-semibold text-foreground shadow-sm"
             >
               Sign In
             </Button>
@@ -128,8 +128,8 @@ export default function NewspaperNavbar() {
       {/* MOBILE DROPDOWN DRAWER */}
       {isMenuOpen && (
         <div
-          className="md:hidden id=mobile-menu"
-          className="border-t border-default-100 bg-background px-4 py-3"
+          id="mobile-menu"
+          className="md:hidden border-t border-default-100 bg-background px-4 py-3"
         >
           <ul className="space-y-1">
             {categories.map((category) => (

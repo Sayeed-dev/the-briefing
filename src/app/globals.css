@@ -2,6 +2,5 @@
 @import "@heroui/styles"; 
 
 @theme {
-  --font-masthead: var(--font-texturina), serif;
   --font-body: var(--font-merriweather), serif;
 }

@@ -1,12 +1,7 @@
 import Nav from "@/components/Nav";
-import { Texturina, Merriweather } from "next/font/google";
+import { Merriweather } from "next/font/google";
 import "./globals.css";
 
-const texturina = Texturina({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-texturina",
-});
 const merriweather = Merriweather({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -23,9 +18,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${texturina.variable} ${merriweather.variable}`}
+      className={`${merriweather.variable}`}
     >
-      <body className="min-h-full flex flex-col font-masthead">
+      <body className="min-h-full flex flex-col font-body">
         <Nav />
         {children}
       </body>
