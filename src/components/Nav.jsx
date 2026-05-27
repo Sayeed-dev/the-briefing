@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Button, Link } from "@heroui/react";
+import { Button } from "@heroui/react";
+import Link from "next/link";
 
 export default function NewspaperNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -103,24 +104,24 @@ export default function NewspaperNavbar() {
 
           {/* RIGHT SIDE: Action Controls */}
           <div className="flex items-center gap-2">
-            <Button
-              as={Link}
-              href="/signin"
-              variant="tertiary" // HeroUI v3 light alternative
-              size="sm"
-              className="hidden sm:inline-flex text-xs font-semibold text-foreground shadow-sm"
-            >
-              Sign In
-            </Button>
-            <Button
-              as={Link}
-              href="/subscribe"
-              variant="primary" // HeroUI v3 updated color-variant handling
-              size="sm"
-              className="font-semibold text-xs shadow-sm"
-            >
-              Subscribe
-            </Button>
+            <Link href="/signin">
+              <Button
+                variant="tertiary"
+                size="sm"
+                className="hidden sm:inline-flex text-xs font-semibold text-foreground shadow-sm"
+              >
+                Sign In
+              </Button>
+            </Link>
+            <Link href="/subscribe">
+              <Button
+                variant="primary"
+                size="sm"
+                className="font-semibold text-xs shadow-sm"
+              >
+                Subscribe
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
