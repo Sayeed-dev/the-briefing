@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Button } from "@heroui/react";
 import Link from "next/link";
+import NavLink from "./NavLink";
 
 export default function NewspaperNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -92,12 +93,12 @@ export default function NewspaperNavbar() {
           <ul className="hidden lg:flex items-center gap-6">
             {categories.map((category) => (
               <li key={category.name}>
-                <Link
+                <NavLink
                   href={category.href}
                   className="text-sm font-medium text-default-600 hover:text-accent transition-colors"
                 >
                   {category.name}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>

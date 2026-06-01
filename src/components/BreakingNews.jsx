@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 
 const BreakingNews = () => {
   return (
-    <div className="flex gap-3 rounded my-2">
+    <div className="flex gap-3 rounded my-2 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 gap-4">
       <h2 className="text-xl font-bold">Breaking</h2>
       <Marquee
         gradient={true}
