@@ -1,31 +1,14 @@
 import Catagpories from "@/components/Catagories";
 import ConnectWithUs from "@/components/ConnectWithUs";
 import NewsCard from "@/components/NewsCard";
+import { CatagoryData, newsData } from "@/lib/fetch_data";
 
 const catagoryPage = async ({ params }) => {
+
   const { id } = await params
-
-   const CatagoryData = async () => {
-    const res = await fetch(
-      "https://openapi.programming-hero.com/api/news/categories",
-      {
-        cache: "no-store",
-      },
-    );
-    return res.json();
-  };
   const catagory = await CatagoryData();
+  const news = await newsData(id);
 
-  const newsData = async () => {
-    const res = await fetch(
-      `https://openapi.programming-hero.com/api/news/category/${id}`,
-      {
-        cache: "no-store",
-      },
-    );
-    return res.json();
-  };
-  const news = await newsData();
   return (
     <div className="grid grid-cols-12 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 gap-4 mt-6">
       <div className="col-span-3">
